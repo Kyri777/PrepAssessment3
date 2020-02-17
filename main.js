@@ -27,7 +27,9 @@
 
   // employeeA.sayMyName(); // "jack"
   // employeeB.sayMyName(); // "Mark"
-
+function sayMyName(){
+  return employee.name;
+}
 
   //now modify that closure and add a function that says hello to the employee name;
 
@@ -55,7 +57,14 @@
   // a - we need to create the pets (lets create only one for now), the invocation should take the name of the pet. 
 
   // var pet1 = Pet("doggy");
+  function petCreation ( type){
+    var i=0;
+    return {
+      Type:type,
+    }   
+    return 
 
+  }
   // b - we need function to add the other info for the pet, called addInfo function. Make sure your functions unneeded memory space
 
   // pet1.addInfo(age, owner, gender, species);
