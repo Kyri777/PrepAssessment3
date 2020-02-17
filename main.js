@@ -11,22 +11,35 @@
 //==============================================================================
 //lets make an employee profile using closures
 
-  function employee (name,salary){
+  function makeEmployee (employeeName){
+    var employee = employeeName;
     return {
-      name: name,
-      salary: salary
+      addEmployee: function (name, salary) {
+        return {
+          name: name,
+          salary: salary
+        }
+      },
+      sayMyname: function  () {
+        return name;
+      }
     }   
   }
-
-  var employeeA = employee("jack", 100);
-  var employeeB = employee("Mark", 200);
-  var employeeC = employee("Sara", 150);
+  var employeeA = makeEmployee (employeeA);
+  var employeeB = makeEmployee (employeeB);
+  var employeeC = makeEmployee (employeeC);
+  employeeA.addEmployee("jack", 100);
+  employeeB.addEmployee("Mark", 200);
+  employeeC.addEmployee("Sara", 150);
 
 
   //create a function when invoked returns the name of that employee.
 
   // employeeA.sayMyName(); // "jack"
   // employeeB.sayMyName(); // "Mark"
+ 
+
+
 
 
   //now modify that closure and add a function that says hello to the employee name;
@@ -53,6 +66,28 @@
 //=============================================================================
   //lets create a pet class using OOP concept,
   // a - we need to create the pets (lets create only one for now), the invocation should take the name of the pet. 
+
+  function Pet (name) {
+    var pet = {};
+    pet.name = name;
+    pet.addPet = addPet;
+  }
+  
+  var addPet = function () {
+    return {
+      name: this.name
+    }
+  }
+  var addInfo = function (age, owner, gender, species) {
+    return {
+      age: age,
+      owner: owner,
+      gender: gender,
+      species: species
+    }
+  }
+  var pet1 = Pet("doggy");
+
 
   // var pet1 = Pet("doggy");
 
@@ -103,7 +138,18 @@ function reduce(array, f, acc) {
 
 // Write your code here .....
 
+function max (array) {
+  return reduce (array, function (max, element) {
+    if (max > element){
+      max = max;
+    } else {
+      max = element
+    }
+    return max;
+  });
+  
 
+}
 
 
 //================================================================================
