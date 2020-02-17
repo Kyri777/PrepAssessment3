@@ -11,67 +11,89 @@
 //==============================================================================
 //lets make an employee profile using closures
 
-  function employee (name,salary){
-    return {
-      name: name,
-      salary: salary
-    }   
-  }
+function employee(name, salary) {
+  var employee = {};
 
-  var employeeA = employee("jack", 100);
-  var employeeB = employee("Mark", 200);
-  var employeeC = employee("Sara", 150);
+  employee.name = sayName;
+  employee.salary = increaseSalary;
+  employee.welcome = sayHello;
+  return employee;
+}
+var employeeA = employee("jack", 100);
+var employeeB = employee("Mark", 200);
+var employeeC = employee("Sara", 150);
 
+//create a function when invoked returns the name of that employee.
+function sayName() {
+  return this.name;
+}
 
-  //create a function when invoked returns the name of that employee.
+// employeeA.sayMyName(); // "jack"
+// employeeB.sayMyName(); // "Mark"
 
-  // employeeA.sayMyName(); // "jack"
-  // employeeB.sayMyName(); // "Mark"
+//now modify that closure and add a function that says hello to the employee name;
+function sayHello() {
+  return "hello" + this.name;
+}
+// employeeA.sayHello(); // hello jack
+// employeeB.sayHello(); // hello Mark
 
+//modify your closure and add function increaseSalary that increases the salary for the employee by n value and return it.
+//employeeA.increaseSalary(50); // "your salary is 150$"
+function increaseSalary(n) {
+  return this.salary = this.salary + n
+}
+//how about we let jack and mark meet togther!
+//modify your closure and add function addFriend that accepts an object as a parameter, and let jack meets his friends.
 
-  //now modify that closure and add a function that says hello to the employee name;
+// employeeA.addFriend(employeeB); // "you just became friend with Mark"
+// employeeA.addFriend(employeeC); // "you just became friend with Mark and Sara"
 
-  // employeeA.sayHello(); // hello jack
-  // employeeB.sayHello(); // hello Mark
+//modify your closure to tell mark how many friends does he have.
 
-  //modify your closure and add function increaseSalary that increases the salary for the employee by n value and return it.
-  //employeeA.increaseSalary(50); // "your salary is 150$"
-
-  //how about we let jack and mark meet togther!
-  //modify your closure and add function addFriend that accepts an object as a parameter, and let jack meets his friends.
-
-  // employeeA.addFriend(employeeB); // "you just became friend with Mark"
-  // employeeA.addFriend(employeeC); // "you just became friend with Mark and Sara"
-
-  //modify your closure to tell mark how many friends does he have.
-
-  // employeeA.listFriends(); // "you have 2 friends"
+// employeeA.listFriends(); // "you have 2 friends"
 
 
 //=============================================================================
 /*                                  Q2                                       */
 //=============================================================================
-  //lets create a pet class using OOP concept,
-  // a - we need to create the pets (lets create only one for now), the invocation should take the name of the pet. 
+//lets create a pet class using OOP concept,
+// a - we need to create the pets (lets create only one for now), the invocation should take the name of the pet. 
+var pet1 = Pet("doggy");
+// b - we need function to add the other info for the pet, called addInfo function. Make sure your functions unneeded memory space
+function addInfo(age, owner, gender, species) {
+  var pet = {}
+  pet.age = UpdateAge;
+  pet.owner;
+  pet.gender;
+  pet.species;
+  pet.availability = false;
+  pet.state = available;
+  pet.statChange = changeState;
+  return pet;
+}
+//pet1.addInfo(age, owner, gender, species);
 
-  // var pet1 = Pet("doggy");
+// c- create another function to increase the pet age by n value.
+function UpdateAge(n) {
+  return this.age = this.age + n;
+}
+// d - create a variable called availability with the default state as false, then create another function to check the pet state, returns true if the pet is available and false if it's not
+function available(name) {
+  if (this.availability === true) {
+    return "available"
+  } else return "not available"
+}
+// f- in order to change the state of the pet, create a function called changeState, when called it will make the pet avaliablity true,
+//    and when called again it will make it false.
+function changeState() {
+  return this.availability = true;
+}
 
-  // b - we need function to add the other info for the pet, called addInfo function. Make sure your functions unneeded memory space
+// Write your code here .....
 
-  // pet1.addInfo(age, owner, gender, species);
-
-  // c- create another function to increase the pet age by n value.
-
-  // d - create a variable called availability with the default state as false, then create another function to check the pet state, returns true if the pet is available and false if it's not
-
-  // f- in order to change the state of the pet, create a function called changeState, when called it will make the pet avaliablity true,
-  //    and when called again it will make it false.
-
-
-  // Write your code here .....
-
-
-  // Now, to make sure that you are actually reading, make a comment below this and type: Yes I am
+//Yes I am 
+// Now, to make sure that you are actually reading, make a comment below this and type: Yes I am
 
 //=============================================================================
 /*                                  Q3                                       */
@@ -88,20 +110,27 @@ function each(coll, f) {
   }
 }
 
-function reduce(array, f, acc) { 
- if (acc === undefined) { 
-   acc = array[0]; 
-   array = array.slice(1); 
- } 
- each(array, function(element, i) { 
-   acc = f(acc, element, i); 
- }); 
- return acc; 
+function reduce(array, f, acc) {
+  if (acc === undefined) {
+    acc = array[0];
+    array = array.slice(1);
+  }
+  each(array, function (element, i) {
+    acc = f(acc, element, i);
+  });
+  return acc;
 }
 
 // Use the updated version of reduce to write a function max that returns the maximum number in an array of numbers. 
 
-// Write your code here .....
+function maximum(numbers) {
+  return reduce(numbers, function (acc, element) {
+    if (acc > element) {
+      return acc;
+    }
+    return element;
+  }, numbers[0]);
+}
 
 
 
