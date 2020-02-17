@@ -28,8 +28,29 @@
   // employeeA.sayMyName(); // "jack"
   // employeeB.sayMyName(); // "Mark"
 
+  function MyEmployee(){
+    var anEmployee={}
+    
+    anEmployee.sayMyName=sayMyName;
+    anEmployee.sayHello=sayHello;
+    anEmployee.increaseSalary=increaseSalary;
+    anEmployee.addFriend=addFriend;
+    anEmployee.listFriends=listFriends;
+    
+
+    return anEmployee
+  }
+
+  var sayMyName= function(){
+    return this.name
+  }
+
 
   //now modify that closure and add a function that says hello to the employee name;
+
+ var sayHello =function(){
+    return "Hello " + this.name
+  }
 
   // employeeA.sayHello(); // hello jack
   // employeeB.sayHello(); // hello Mark
@@ -37,15 +58,25 @@
   //modify your closure and add function increaseSalary that increases the salary for the employee by n value and return it.
   //employeeA.increaseSalary(50); // "your salary is 150$"
 
+  var increaseSalary= function(value){
+      return this.salary=this.salary-value
+  }
   //how about we let jack and mark meet togther!
   //modify your closure and add function addFriend that accepts an object as a parameter, and let jack meets his friends.
 
   // employeeA.addFriend(employeeB); // "you just became friend with Mark"
   // employeeA.addFriend(employeeC); // "you just became friend with Mark and Sara"
 
+    var addFriend=function(obj){
+      return this.name +" meet "+ obj.name
+  }
   //modify your closure to tell mark how many friends does he have.
 
   // employeeA.listFriends(); // "you have 2 friends"
+
+  var listFriends=function(){
+
+  }
 
 
 //=============================================================================
@@ -57,11 +88,36 @@
   // var pet1 = Pet("doggy");
 
   // b - we need function to add the other info for the pet, called addInfo function. Make sure your functions unneeded memory space
+  var pet1 = Pet("doggy");
 
+  function Pet(name){
+    var myPet={}
+
+    myPet.addInfo= addInfo;
+    myPet.increasePetAge=increasePetAge;
+
+    return myPet;
+
+  }
+  
   // pet1.addInfo(age, owner, gender, species);
+
+  var addInfo= function(age, owner, gender, species){
+    var myObject= { 
+                    age:age,
+                    owner:owner,
+                    gender:gender, 
+                    species: species,
+                  }
+    return  Object.assign(this.myPet, myObject)
+}
+
 
   // c- create another function to increase the pet age by n value.
 
+  var increasePetAge=function(n){
+     return this.age=this.age+n;
+  }
   // d - create a variable called availability with the default state as false, then create another function to check the pet state, returns true if the pet is available and false if it's not
 
   // f- in order to change the state of the pet, create a function called changeState, when called it will make the pet avaliablity true,
@@ -104,7 +160,15 @@ function reduce(array, f, acc) {
 // Write your code here .....
 
 
-
+function max(array){
+   return reduce (array, function (acc, element, i){
+      if (element>acc){
+        acc=element;
+      }
+      return acc;
+   }, acc);
+   
+  }
 
 //================================================================================
 /*                              Q4                                              */
