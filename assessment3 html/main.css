@@ -1,0 +1,10 @@
+body  {
+    background-color: blue;
+}
+header {
+    font-family: 'Courier New', Courier, monospace;
+}
+input {
+    width: 300px;
+    height: 350px;
+}
