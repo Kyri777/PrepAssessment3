@@ -14,7 +14,18 @@
   function employee (name,salary){
     return {
       name: name,
-      salary: salary
+      salary: salary,
+      sayMyName:  function() {
+        return employee.name;
+      },
+      sayHello: function() {
+        return "Hello "+ employee.name;
+      },
+      increaseSalary: function(n) {
+        return "your salary is "+employee.salary+ n+'$';
+      }
+      
+
     }   
   }
 
@@ -69,6 +80,43 @@
 
 
   // Write your code here .....
+  function pet(name) {
+   var pet={};
+   pet.name=name;
+   pet.age;
+   pet.owner;
+   pet.gender;
+   pet.species;
+   pet.availability=false;
+   pet.checkAvalibility=checkAvailibility;
+   pet.changeState=changeState;
+   return pet;
+  } 
+  var addInfo=function(age, owner, gender, species) {
+        this.age=age;
+        this.owner=owner;
+        this.gender=gender;
+        this.species=species;
+        return this;
+  }
+  var increaseAge=function(n) {
+    this.age+=n;
+    return this;
+  }
+  var checkAvailibilty=function() {
+    if (this.availibilty=== false) {
+      return false;
+    }
+    return true;
+  }
+  var changeState=function() {
+    if (this.availibility===false) {
+      return true;
+    }
+    return false;
+  }
+
+
 
 
   // Now, to make sure that you are actually reading, make a comment below this and type: Yes I am
@@ -102,7 +150,14 @@ function reduce(array, f, acc) {
 // Use the updated version of reduce to write a function max that returns the maximum number in an array of numbers. 
 
 // Write your code here .....
-
+function max(array) {
+  return reduce(array, function(maximum,element){
+    if(element> maximum) {
+      maximum=element;
+    }
+    return maximum;
+  })
+}
 
 
 
