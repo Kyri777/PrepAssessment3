@@ -25,6 +25,28 @@
 
   //create a function when invoked returns the name of that employee.
 
+function employees(employee){
+    return {
+      sayMyName: function(employee){
+        return "This employee is named: " + employee.name;
+      },
+      sayhello: function(employee){
+        return "Hello " + employee.name;
+      },
+      increaseSalary: function(n){
+        return employee.salary= employee.salary + n;
+      },
+      addFriend: function(employee, friend){
+        employee.friends= friend;
+        return "you just became friends with " + friend.name;
+      },
+      friendList: function(employee){
+       return you have 
+      }
+    }
+}
+
+
   // employeeA.sayMyName(); // "jack"
   // employeeB.sayMyName(); // "Mark"
 
@@ -54,6 +76,50 @@
   //lets create a pet class using OOP concept,
   // a - we need to create the pets (lets create only one for now), the invocation should take the name of the pet. 
 
+  function Pet(petName){
+    var pets={}
+
+    pets.addInfo= addInfo;
+    pets.increaseAge= increaseAge;
+    pets.availibility= false;
+    pets.available= available;
+    pets.changeAvailibility= changeAvailibility;
+
+
+    return pets;
+  }
+
+  function addInfo(age, owner, gender, species){
+    return {
+      age: age,
+      owner: owner,
+      gender: gender,
+      species: species
+    };
+  }
+
+  function increaseAge(n){
+   return this.addInfo.age= this.addInfo + n;
+  }
+
+  function available(name){
+    if(name===petName){
+      this.availibility= true;
+      return 'This pet is available.'
+    }
+    return 'This pet is not available.'
+    
+  }
+
+  function changeAvailibility(){
+    if(this.availibility===true){
+      return this.availibility= false;
+    }
+    if(this.available===false){
+      return this.availibility= true;
+    }
+  }
+
   // var pet1 = Pet("doggy");
 
   // b - we need function to add the other info for the pet, called addInfo function. Make sure your functions unneeded memory space
@@ -72,6 +138,8 @@
 
 
   // Now, to make sure that you are actually reading, make a comment below this and type: Yes I am
+
+  //Yes I am
 
 //=============================================================================
 /*                                  Q3                                       */
@@ -103,6 +171,15 @@ function reduce(array, f, acc) {
 
 // Write your code here .....
 
+function max(array){
+  return reduce(array, function(max, element, i){
+    if(element>max){
+      return max= element
+    }
+    return max;
+  })
+}
+
 
 
 
@@ -119,6 +196,23 @@ function reduce(array, f, acc) {
  //        1. Add header : HTML is Eazy
  //        2. Add the following paragraph: 
  //            HyperText Markup Language (HTML) is the standard markup language for creating web pages and web applications. 
+
+<html>
+<head>
+  <title>My Easy Assessment</title>
+</head>
+<body>
+  <div id='addInfo'>
+  	
+  	<h1>HTML is Eazy</h1>
+  	<p>HyperText Markup Language (HTML) is the standard markup language for creating web pages and web applications.</p>
+
+  </div>	
+  
+  <script type="text/javascript" src="main.js"></script>
+</body>
+</html>
+
 
  //    f. create an input text and a button called Add.
 
