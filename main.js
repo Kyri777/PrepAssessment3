@@ -25,9 +25,24 @@
 
   //create a function when invoked returns the name of that employee.
 
+
+  
   // employeeA.sayMyName(); // "jack"
   // employeeB.sayMyName(); // "Mark"
 
+
+  function employen(){
+
+    
+     
+    function sayMyName (){
+
+      return employeeA.name
+    } 
+    return sayMyName  
+  }
+
+  
 
   //now modify that closure and add a function that says hello to the employee name;
 
@@ -52,7 +67,9 @@
 /*                                  Q2                                       */
 //=============================================================================
   //lets create a pet class using OOP concept,
-  // a - we need to create the pets (lets create only one for now), the invocation should take the name of the pet. 
+  // a  - we need to create the pets (lets create only one for now), the invocation should take the name of the pet. 
+
+       
 
   // var pet1 = Pet("doggy");
 
@@ -72,6 +89,8 @@
 
 
   // Now, to make sure that you are actually reading, make a comment below this and type: Yes I am
+
+   //Yes , I'm.
 
 //=============================================================================
 /*                                  Q3                                       */
@@ -118,7 +137,7 @@ function reduce(array, f, acc) {
  //    e. Create a new div with id myInfo.
  //        1. Add header : HTML is Eazy
  //        2. Add the following paragraph: 
- //            HyperText Markup Language (HTML) is the standard markup language for creating web pages and web applications. 
+ //           
 
  //    f. create an input text and a button called Add.
 
@@ -136,3 +155,4 @@ function reduce(array, f, acc) {
 
 
                               //  Good Luck :))
+
