@@ -47,6 +47,29 @@
 
   // employeeA.listFriends(); // "you have 2 friends"
 
+  function sayMyName(employee) {
+    return employee.name;
+  }
+
+  function sayHello(employee){
+    return "Hello " + employee.name;
+  }
+
+  function increaseSalary(employee, n){
+    return "your salary is " + (employee.salary+n)+" $"
+  }
+
+  function addFriend (employee, object) {
+    return employee.name + " you just became friend with " + object;
+  
+}
+//  our input is an array of string e.g ["sarra","joe"]
+function ListFriends (array){
+
+return " you have " + (array.length) + " friends"
+
+}
+
 
 //=============================================================================
 /*                                  Q2                                       */
@@ -70,9 +93,44 @@
 
   // Write your code here .....
 
+  function pet(petName){
+    return name=petName
+    
+   }
+ 
+   function addInfo(age, owner, gender, species){
+     return {
+       age: age,
+       owner: owner,
+       gender: gender,
+       species: species
+     };
+   }
+ 
+   function increaseAge(n){
+     this.addInfo.age= this.naddInfo.age+n
+  return this.addInfo.age
+   }
+ 
+   function available(name){
+     if(name===petName){
+       this.availibility= true;
+       return 'This pet is available.'
+     } else 
+     return 'This pet is not available.'
+ }
+ 
+   function ChangeAvailibility(){
+     if(this.availibility===true){
+       return this.availibility= false;
+     }
+     if(this.available===false){
+       return this.availibility= true;
+     }
+   }
 
   // Now, to make sure that you are actually reading, make a comment below this and type: Yes I am
-
+/* Yes i am
 //=============================================================================
 /*                                  Q3                                       */
 //=============================================================================
@@ -105,6 +163,14 @@ function reduce(array, f, acc) {
 
 
 
+function max(array){
+  return reduce (array, function(acc, element, i){
+     if (acc < element) {
+       return element;
+     } 
+     return acc;
+  })
+}
 
 //================================================================================
 /*                              Q4                                              */
@@ -133,6 +199,20 @@ function reduce(array, f, acc) {
 // 3. Write javascript function when user type text inside the input text and click the "Add" 
 //     button it will add the text to the ul element.
 
+<html>
+<head>
+  <title>My Easy Assessment</title>
+</head>
+<body>
+  <div id='addInfo'>
+  	
+  	<h1>HTML is Eazy</h1>
+  	<p>HyperText Markup Language (HTML) is the standard markup language for creating web pages and web applications.</p>
+
+  </div>	
+  
+</body>
+</html>
 
 
                               //  Good Luck :))
